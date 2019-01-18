@@ -1,0 +1,58 @@
+{
+  "name": "AwesomeProject",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "jest-expo": "~27.0.0",
+    "node-sass": "^4.9.2",
+    "react-native-sass-transformer": "^1.2.2",
+    "react-native-scripts": "1.14.0",
+    "react-test-renderer": "16.3.1"
+  },
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "scripts": {
+    "start": "react-native-scripts start",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "dependencies": {
+    "expo": "^27.0.1",
+    "firebase": "^5.0.4",
+    "html-entities": "^1.2.1",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "native-base": "^2.6.0",
+    "oauth-1.0a": "^1.0.1",
+    "prop-types": "^15.6.0",
+    "react": "16.3.1",
+    "react-addons-shallow-compare": "^15.6.2",
+    "react-native": "~0.55.2",
+    "react-native-animatable": "^1.2.4",
+    "react-native-deprecated-custom-components": "^0.1.2",
+    "react-native-dimension": "^1.0.6",
+    "react-native-drawer": "^2.5.0",
+    "react-native-easy-grid": "^0.2.0",
+    "react-native-email": "^1.0.2",
+    "react-native-geocoding": "^0.3.0",
+    "react-native-image-rotate": "^2.1.0",
+    "react-native-keyboard-aware-scroll-view": "^0.7.4",
+    "react-native-maps": "^0.22.0",
+    "react-native-material-dropdown": "^0.11.1",
+    "react-native-modalbox": "^1.4.2",
+    "react-native-parallax-scroll-view": "^0.20.1",
+    "react-native-render-html": "^3.5.0",
+    "react-native-responsive-screen": "^1.1.9",
+    "react-native-router-flux": "^4.0.0-beta.22",
+    "react-native-scrollable-tab-view": "^0.8.0",
+    "react-native-simple-radio-button": "^2.7.3",
+    "react-native-swiper": "^1.5.13",
+    "react-native-timeago": "^0.4.0",
+    "react-native-vector-icons": "^4.6.0",
+    "react-navigation": "^3.0.8"
+  }
+}
