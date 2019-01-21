@@ -11,7 +11,7 @@ import gstyles from '../styling/globalStyles.js'
 // import console = require('console');
 
 // var myUId = ''
-
+var route = ''
 var data = "" ; 
 var title = ''
 var content  = ''
@@ -31,7 +31,7 @@ export default  class Article extends Component {
       const { state, navigate } = this.props.navigation;
 
     //   myUId = state.params.UserId
-      var route = state.params.screen
+       route = state.params.screen
       console.log(route)
 var myThis = this
       firebase.database().ref('articles/'+route+'/').on('value' , function(snapshot) {
@@ -79,6 +79,7 @@ var myThis = this
       return (
         
         <Container>
+           <StatusBar hidden={true} />
         <Header style = {gstyles.mainNav}>
           <Left>
           
@@ -86,7 +87,10 @@ var myThis = this
               <Icon name="arrow-back" />
             </Button>
           </Left>
-          <Body/>
+          <Body>
+
+            <Text style={{color:'white' ,fontWeight: 'bold' , marginTop : "2%" }}>{route}</Text>
+          </Body>
           <Right/>
         </Header>
         <Content>

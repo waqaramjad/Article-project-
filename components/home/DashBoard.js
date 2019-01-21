@@ -50,6 +50,7 @@ export default  class DashBoard extends Component {
       return (
         
         <Container>
+           <StatusBar hidden={true} />
          <Header style = {gstyles.mainNav}>
           {/* <Left>
           
