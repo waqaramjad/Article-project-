@@ -8,9 +8,7 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 import Expo from "expo";
 import gstyles from '../styling/globalStyles.js'
 
-// import console = require('console');
 
-// var myUId = ''
 var route = ''
 var data = "" ; 
 var title = ''
@@ -30,15 +28,12 @@ export default  class Article extends Component {
       };
       const { state, navigate } = this.props.navigation;
 
-    //   myUId = state.params.UserId
        route = state.params.screen
       console.log(route)
 var myThis = this
       firebase.database().ref('articles/'+route+'/').on('value' , function(snapshot) {
         console.log(snapshot.val())
-        // console.log()
         data  = snapshot.val()
-        // console.log('data.content')
         console.log(data.content)
       var    title= data.title
       var    content= data.content
@@ -46,8 +41,6 @@ var myThis = this
             title : title , 
             content : content , 
          })
-        // console.log('data.title')
-        // console.log(data.title)
   
       
       })
@@ -95,15 +88,13 @@ var myThis = this
         </Header>
         <Content>
         
-    <Card>
+    {/* ******************************************** card no 1 ***********************************************/}
+    
+        <Card>
             
-            <CardItem cardBody>
-              {/* <Image source={{uri: '../../assets/NavScreen/profile.png'}} style={{height: 200, width: null, flex: 1}}/> */}
-              <Text> {myThis.state.content} </Text>
-            </CardItem>
             <CardItem>
               
-              <Body>
+              <Body> 
                 
                  
                   <Text style={{fontSize: 15,
@@ -112,17 +103,20 @@ var myThis = this
                 
               </Body>
              
+            </CardItem>
+            <CardItem cardBody>
+              <Text> {myThis.state.content} </Text>
             </CardItem>
           </Card>
-    <Card>
+
+    {/* ******************************************** card no 2 ***********************************************/}
+
+
+          <Card>
             
-            <CardItem cardBody>
-              {/* <Image source={{uri: '../../assets/NavScreen/profile.png'}} style={{height: 200, width: null, flex: 1}}/> */}
-              <Text> {myThis.state.content} </Text>
-            </CardItem>
             <CardItem>
               
-              <Body>
+              <Body> 
                 
                  
                   <Text style={{fontSize: 15,
@@ -131,17 +125,19 @@ var myThis = this
                 
               </Body>
              
+            </CardItem>
+            <CardItem cardBody>
+              <Text> {myThis.state.content} </Text>
             </CardItem>
           </Card>
-    <Card>
+
+    {/* ******************************************** card no 3 ***********************************************/}
+
+          <Card>
             
-            <CardItem cardBody>
-              {/* <Image source={{uri: '../../assets/NavScreen/profile.png'}} style={{height: 200, width: null, flex: 1}}/> */}
-              <Text> {myThis.state.content} </Text>
-            </CardItem>
             <CardItem>
               
-              <Body>
+              <Body> 
                 
                  
                   <Text style={{fontSize: 15,
@@ -150,6 +146,9 @@ var myThis = this
                 
               </Body>
              
+            </CardItem>
+            <CardItem cardBody>
+              <Text> {myThis.state.content} </Text>
             </CardItem>
           </Card>
   
