@@ -21,6 +21,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "add": "^2.0.6",
     "expo": "^27.0.1",
     "firebase": "^5.0.4",
     "html-entities": "^1.2.1",
@@ -28,6 +29,7 @@
     "moment": "^2.18.1",
     "native-base": "^2.6.0",
     "oauth-1.0a": "^1.0.1",
+    "or": "^0.2.0",
     "prop-types": "^15.6.0",
     "react": "16.3.1",
     "react-addons-shallow-compare": "^15.6.2",
@@ -45,7 +47,7 @@
     "react-native-material-dropdown": "^0.11.1",
     "react-native-modalbox": "^1.4.2",
     "react-native-parallax-scroll-view": "^0.20.1",
-    "react-native-render-html": "^3.5.0",
+    "react-native-render-html": "^3.10.0",
     "react-native-responsive-screen": "^1.1.9",
     "react-native-router-flux": "^4.0.0-beta.22",
     "react-native-scrollable-tab-view": "^0.8.0",
@@ -53,6 +55,7 @@
     "react-native-swiper": "^1.5.13",
     "react-native-timeago": "^0.4.0",
     "react-native-vector-icons": "^4.6.0",
-    "react-navigation": "^3.0.8"
+    "react-navigation": "^3.0.8",
+    "yarn": "^1.13.0"
   }
 }
