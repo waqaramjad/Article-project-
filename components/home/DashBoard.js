@@ -7,7 +7,24 @@ import {  Item, Input ,  Accordion , Container, Header,  Icon , Content, Card, C
 import { Col, Row, Grid } from "react-native-easy-grid";
 import Expo from "expo";
 import gstyles from '../styling/globalStyles.js'
+import HTML from 'react-native-render-html';
+ 
+var config = {
+  apiKey: "AIzaSyDcyZcVQP8nuHcMJsKd5wHxoaerUW6apZQ",
+    authDomain: "waqarchatapp.firebaseapp.com",
+    databaseURL: "https://waqarchatapp.firebaseio.com",
+    projectId: "waqarchatapp",
+    storageBucket: "waqarchatapp.appspot.com",
+    messagingSenderId: "676235345078"};
+firebase.initializeApp(config);
 
+
+const htmlContent = `
+    <h1>This HTML snippet is now rendered with native components !</h1>
+    <h2>Enjoy a webview-free and blazing fast application</h2>
+    <img src="https://i.imgur.com/dHLmxfO.jpg?2" />
+    <em style="textAlign: center;">Look at how happy this native cat is</em>
+`;
 
 
 export default  class DashBoard extends Component { 
@@ -43,6 +60,12 @@ export default  class DashBoard extends Component {
       if (this.state.loading) {
         return <Expo.AppLoading />;
       }
+      const htmlContent = `
+    <h1>This HTML snippet is now rendered with native components !</h1>
+    <h2>Enjoy a webview-free and blazing fast application</h2>
+    <img src="https://i.imgur.com/dHLmxfO.jpg?2" />
+    <em style="textAlign: center;">Look at how happy this native cat is</em>
+`;
 
       const { navigate } = this.props.navigation; 
       
@@ -185,7 +208,7 @@ export default  class DashBoard extends Component {
           
     </Col>
 </Grid>
-          
+<HTML html={htmlContent} imagesMaxWidth={Dimensions.get('window').width} />
         </Content>
       </Container>
             

@@ -10,14 +10,14 @@ import firebase from 'firebase';
 
 
 
-var config = {
-  apiKey: "AIzaSyB4j851elw4Rkp63U_S3vnCXqNYOlWUoOU",
-  authDomain: "practice-6b442.firebaseapp.com",
-  databaseURL: "https://practice-6b442.firebaseio.com",
-  projectId: "practice-6b442",
-  storageBucket: "practice-6b442.appspot.com",
-  messagingSenderId: "463133660375"};
-firebase.initializeApp(config);
+// var config = {
+//   apiKey: "AIzaSyDcyZcVQP8nuHcMJsKd5wHxoaerUW6apZQ",
+//     authDomain: "waqarchatapp.firebaseapp.com",
+//     databaseURL: "https://waqarchatapp.firebaseio.com",
+//     projectId: "waqarchatapp",
+//     storageBucket: "waqarchatapp.appspot.com",
+//     messagingSenderId: "676235345078"};
+// firebase.initializeApp(config);
 
 
 
