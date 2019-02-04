@@ -97,7 +97,8 @@ var myThis = this
       console.log(this.state.data)
       const { state, navigate } = this.props.navigation;
 
-   var     htmlContent = state.params.screen
+   var     data = state.params.screen
+   var htmlContent = data.editorHtml
       var myThis = this ;
       return (
         
