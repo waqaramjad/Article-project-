@@ -23,7 +23,11 @@ export default  class Article extends Component {
     this.state = {
       loading: true , 
       title : '' , 
-      content : ''
+      content : '' , 
+      data : '' , 
+      image : '' , 
+      DataObject : ''
+
      
       };
       const { state, navigate } = this.props.navigation;
@@ -31,15 +35,31 @@ export default  class Article extends Component {
        route = state.params.screen
       console.log(route)
 var myThis = this
-      firebase.database().ref('articles/'+route+'/').on('value' , function(snapshot) {
+      firebase.database().ref('/articles/'+route+'/').on('value' , function(snapshot) {
         console.log(snapshot.val())
         data  = snapshot.val()
-        console.log(data.content)
-      var    title= data.title
-      var    content= data.content
+        // var image = data['avatarURL']
+        var image 
+        var   title
+        var myData 
+        Object.keys(data).map((data1, index) => {
+       var a =    data[data1]
+          console.log(a.avatarURL)
+          image = a.avatarURL
+          title = a.title ,
+          myData = a
+
+          
+          
+
+        })
+        
       myThis.setState({
             title : title , 
             content : content , 
+            image : image , 
+            DataObject : myData
+
          })
   
       
@@ -80,32 +100,33 @@ var myThis = this
               <Icon name="arrow-back" />
             </Button>
           </Left>
-          <Body>
-
-            <Text style={{color:'white' ,fontWeight: 'bold' , marginTop : "2%" }}>{route}</Text>
-          </Body>
+         
           <Right/>
         </Header>
         <Content>
         
     {/* ******************************************** card no 1 ***********************************************/}
-    
-        <Card>
+        <Card  >
             
-            <CardItem>
+            <CardItem button  onPress={()=>{navigate("SingleArticle", {screen: this.state.DataObject})}}>
               
               <Body> 
                 
                  
+                {/* <TouchableOpacity onPress={console.log('domne')}></TouchableOpacity> */}
+                {/* <TouchableOpacity onPress={()=>{console.log('check')}}></TouchableOpacity> */}
                   <Text style={{fontSize: 15,
       fontWeight: 'bold',}}> {myThis.state.title} </Text>
+            {/* </TouchableOpacity> */}
                   
                 
               </Body>
              
-            </CardItem>
-            <CardItem cardBody>
-              <Text> {myThis.state.content} </Text>
+            </CardItem >
+            <CardItem cardBody button onPress={() => alert("This is Card Body")}>
+            {/* <TouchableOpacity onPress={()=>{navigate("Article", {screen: "Medical"})}}></TouchableOpacity> */}
+              <Image style={{width: null, height: 200 , flex: 1}}
+          source={{uri: myThis.state.image }}/>
             </CardItem>
           </Card>
 

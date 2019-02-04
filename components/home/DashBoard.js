@@ -67,8 +67,8 @@ export default  class DashBoard extends Component {
     <em style="textAlign: center;">Look at how happy this native cat is</em>
 `;
 
-      const { navigate } = this.props.navigation; 
-      
+      const { navigate  , state} = this.props.navigation; 
+      // console.log( state.params.screen)
       return (
         
         <Container>
