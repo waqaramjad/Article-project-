@@ -8,6 +8,7 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 import Expo from "expo";
 import gstyles from '../styling/globalStyles.js'
 import HTML from 'react-native-render-html';
+import {AsyncStorage} from 'react-native';
  
 var config = {
   apiKey: "AIzaSyDcyZcVQP8nuHcMJsKd5wHxoaerUW6apZQ",
@@ -48,10 +49,27 @@ export default  class DashBoard extends Component {
       Ionicons: require("@expo/vector-icons/fonts/Ionicons.ttf"),
     });
     this.setState({ loading: false });
+  
+  //   AsyncStorage.getItem("myVal").then((value) => {
+  //     var cnvertTedData = JSON.parse(value)
+  //     console.log("Get Value >> ", cnvertTedData);
+  //     console.log('Get Sports >>' ,cnvertTedData['Sports'])
+  //  }).done();
+  
   }
 
 
- 
+  // _retrieveData = async () => {
+  //   try {
+  //     const value = await AsyncStorage.getItem('data');
+  //     if (value !== null) {
+  //       // We have data!!
+  //       console.log(value);
+  //     }
+  //   } catch (error) {
+  //     // Error retrieving data
+  //   }
+  // };
 
   
   

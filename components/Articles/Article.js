@@ -7,6 +7,7 @@ import {  Item, Input ,  Accordion , Container, Header,  Icon , Content, Card, C
 import { Col, Row, Grid } from "react-native-easy-grid";
 import Expo from "expo";
 import gstyles from '../styling/globalStyles.js'
+import {AsyncStorage} from 'react-native';
 
 
 var route = ''
@@ -86,6 +87,12 @@ var myThis = this
       if (this.state.loading) {
         return <Expo.AppLoading />;
       }
+
+      AsyncStorage.getItem("myVal").then((value) => {
+        var cnvertTedData = JSON.parse(value)
+        // console.log("Get Value >> ", cnvertTedData);
+        console.log('Get Sports >>' ,cnvertTedData['Sports'])
+     }).done();
 
       const { navigate } = this.props.navigation; 
       var myThis = this ;

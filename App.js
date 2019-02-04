@@ -17,6 +17,28 @@ import Article from './components/Articles/Article'
 import SingleArticle from './components/Articles/SingleArticle'
 import {createStackNavigator ,createAppContainer } from 'react-navigation';
 import DashBoard from './components/home/DashBoard'
+import firebase from 'firebase';
+import {AsyncStorage} from 'react-native';
+
+
+
+firebase.database().ref('/articles/').on('value' , function(snapshot) {
+// console.log(snapshot)
+console.log('myVal 1')
+var myVal = snapshot.val()
+
+ AsyncStorage.setItem("myVal", JSON.stringify(myVal));
+// _storeData = async (myVal) => {
+//   try {
+//     console.log(myVal)
+//     console.log('myVal')
+//     await AsyncStorage.setItem('data', myVal);
+//   } catch (error) {
+//     // Error saving data
+//   }
+// };
+
+})
 
 
 // var config = {
