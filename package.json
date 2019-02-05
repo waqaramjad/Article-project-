@@ -27,7 +27,7 @@
     "html-entities": "^1.2.1",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
-    "native-base": "^2.6.0",
+    "native-base": "2.6.0",
     "oauth-1.0a": "^1.0.1",
     "or": "^0.2.0",
     "prop-types": "^15.6.0",
