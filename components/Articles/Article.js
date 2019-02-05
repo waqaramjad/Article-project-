@@ -34,20 +34,19 @@ export default  class Article extends Component {
      
       };
       var myThis = this
+      const { state, navigate } = this.props.navigation;
+       route = state.params.screen
 
       AsyncStorage.getItem("myVal").then((value) => {
         var cnvertTedData = JSON.parse(value)
         // console.log("Get Value >> ", cnvertTedData);
         // console.log('Get Sports >>' ,cnvertTedData['Sports'])
-        CategoryData = cnvertTedData['Sports']
+        CategoryData = cnvertTedData[route]
         this.setState({
           data : CategoryData
         })
         // console.log('CategoryData >>' ,CategoryData)
       }).done();
-      const { state, navigate } = this.props.navigation;
-
-       route = state.params.screen
       console.log(route)
       // firebase.database().ref('/articles/'+route+'/').on('value' , function(snapshot) {
       //   // console.log(snapshot.val())
@@ -125,6 +124,10 @@ export default  class Article extends Component {
               <Icon name="arrow-back" />
             </Button>
           </Left>
+          <Body>
+
+            <Text style={{color:'white' ,fontWeight: 'bold' , marginTop : "2%" }}>{route}</Text>
+          </Body>
          
           <Right/>
         </Header>
@@ -147,7 +150,7 @@ export default  class Article extends Component {
                     return(
                       <Card  >
             
-            <CardItem button  onPress={()=>{navigate("SingleArticle", {screen: this.state.DataObject})}}>
+            <CardItem button id={index} onPress={()=>{navigate("SingleArticle", {screen: ObjectData  } , {screenTitle : route})}}>
               
               <Body> 
                 
@@ -160,7 +163,7 @@ export default  class Article extends Component {
               </Body>
              
             </CardItem >
-            <CardItem cardBody button onPress={() => alert("This is Card Body")}>
+            <CardItem cardBody button onPress={()=>{navigate("SingleArticle", {screen: ObjectData})}}>
             {/* <TouchableOpacity onPress={()=>{navigate("Article", {screen: "Medical"})}}></TouchableOpacity> */}
               <Image style={{width: null, height: 200 , flex: 1}}
           source={{uri:ObjectData.avatarURL }}/>
@@ -169,31 +172,11 @@ export default  class Article extends Component {
                     )
 
    })
-   : null
+   : <View style={styles1.textView}><Text style={styles1.noData}>No data to Show </Text></View>
   } 
                      
                               
-        <Card  >
-            
-            <CardItem button  onPress={()=>{navigate("SingleArticle", {screen: this.state.DataObject})}}>
-              
-              <Body> 
-                
-                 
-                  <Text style={{fontSize: 15,
-      fontWeight: 'bold',}}> {myThis.state.title} </Text>
-            {/* </TouchableOpacity> */}
-                  
-                
-              </Body>
-             
-            </CardItem >
-            <CardItem cardBody button onPress={() => alert("This is Card Body")}>
-            {/* <TouchableOpacity onPress={()=>{navigate("Article", {screen: "Medical"})}}></TouchableOpacity> */}
-              <Image style={{width: null, height: 200 , flex: 1}}
-          source={{uri: myThis.state.image }}/>
-            </CardItem>
-          </Card>
+        
 
   
           
@@ -206,3 +189,16 @@ export default  class Article extends Component {
     }
   }
   
+  const styles1 = StyleSheet.create({
+
+    noData : {
+      fontSize : 24
+    } ,
+    textView :{
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center'
+    
+    }
+
+  })

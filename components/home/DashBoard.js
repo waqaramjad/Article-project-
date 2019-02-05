@@ -173,7 +173,7 @@ export default  class DashBoard extends Component {
               <ImageBackground source={require('../../assets/home/ChurchPlanting.jpg')} style=
               {styles.imageUIOfCard}>
     <View style={styles.ButtonandBackgroundView}>
-        <Button transparent full  onPress={()=>{navigate("Article", {screen: "ChurchPlanting"})}} style={styles.routeButton} >
+        <Button transparent full  onPress={()=>{navigate("Article", {screen: "ChurchPlanning"})}} style={styles.routeButton} >
                  
                  <Text style= {styles.buttonTextUI}> Church Planting </Text>
 
@@ -212,7 +212,7 @@ export default  class DashBoard extends Component {
               <ImageBackground source={require('../../assets/home/Kingdombusiness.jpg')} style=
               {styles.imageUIOfCard}>
     <View style={styles.ButtonandBackgroundView}>
-        <Button transparent full  onPress={()=>{navigate("Article", {screen: "Kingdombusiness"})}} style={styles.routeButton} >
+        <Button transparent full  onPress={()=>{navigate("Article", {screen: "KingdomBusiness"})}} style={styles.routeButton} >
                  
                  <Text style= {styles.buttonTextUI}>Kingdom business </Text>
 
@@ -226,7 +226,7 @@ export default  class DashBoard extends Component {
           
     </Col>
 </Grid>
-<HTML html={htmlContent} imagesMaxWidth={Dimensions.get('window').width} />
+{/* <HTML html={htmlContent} imagesMaxWidth={Dimensions.get('window').width} /> */}
         </Content>
       </Container>
             
