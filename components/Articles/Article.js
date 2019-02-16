@@ -39,44 +39,16 @@ export default  class Article extends Component {
 
       AsyncStorage.getItem("myVal").then((value) => {
         var cnvertTedData = JSON.parse(value)
-        // console.log("Get Value >> ", cnvertTedData);
-        // console.log('Get Sports >>' ,cnvertTedData['Sports'])
         CategoryData = cnvertTedData[route]
         this.setState({
           data : CategoryData
         })
-        // console.log('CategoryData >>' ,CategoryData)
       }).done();
       console.log(route)
-      // firebase.database().ref('/articles/'+route+'/').on('value' , function(snapshot) {
-      //   // console.log(snapshot.val())
-      //   data  = snapshot.val()
-      //   // var image = data['avatarURL']
-      //   var image 
-      //   var   title
-      //   var myData 
-      //   Object.keys(data).map((data1, index) => {
-      //  var a =    data[data1]
-      //     // console.log(a.avatarURL)
-      //     image = a.avatarURL
-      //     title = a.title ,
-      //     myData = a
 
           
           
 
-      //   })
-        
-      // myThis.setState({
-      //       title : title , 
-      //       content : content , 
-      //       image : image , 
-      //       DataObject : myData
-
-      //    })
-  
-      
-      // })
   
     
   }
@@ -102,13 +74,6 @@ export default  class Article extends Component {
 
       console.log(this.state.data)
 
-      // AsyncStorage.getItem("myVal").then((value) => {
-      //   var cnvertTedData = JSON.parse(value)
-      //   // console.log("Get Value >> ", cnvertTedData);
-      //   console.log('Get Sports >>' ,cnvertTedData['Sports'])
-      //   CategoryData = cnvertTedData['Sports']
-      //   console.log('CategoryData >>' ,CategoryData)
-      // }).done();
       
       console.log('CategoryData outside>>' ,CategoryData)
       const { navigate } = this.props.navigation; 

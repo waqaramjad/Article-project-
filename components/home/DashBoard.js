@@ -9,7 +9,8 @@ import Expo from "expo";
 import gstyles from '../styling/globalStyles.js'
 import HTML from 'react-native-render-html';
 import {AsyncStorage} from 'react-native';
- 
+// import { Permissions, Notifications } from 'expo';
+import { Permissions, Notifications } from 'expo';
 var config = {
   apiKey: "AIzaSyDcyZcVQP8nuHcMJsKd5wHxoaerUW6apZQ",
     authDomain: "waqarchatapp.firebaseapp.com",
@@ -42,6 +43,9 @@ export default  class DashBoard extends Component {
    
     
   }
+
+
+  
   async componentWillMount() {
     await Expo.Font.loadAsync({
       Roboto: require("native-base/Fonts/Roboto.ttf"),
@@ -50,28 +54,76 @@ export default  class DashBoard extends Component {
     });
     this.setState({ loading: false });
   
-  //   AsyncStorage.getItem("myVal").then((value) => {
-  //     var cnvertTedData = JSON.parse(value)
-  //     console.log("Get Value >> ", cnvertTedData);
-  //     console.log('Get Sports >>' ,cnvertTedData['Sports'])
-  //  }).done();
   
   }
 
+componentDidMount(){
+var that = this
+firebase.auth().signInAndRetrieveDataWithEmailAndPassword('waqaramjad345@gmail.com' , '000000' ).then(user=>{
 
-  // _retrieveData = async () => {
-  //   try {
-  //     const value = await AsyncStorage.getItem('data');
-  //     if (value !== null) {
-  //       // We have data!!
-  //       console.log(value);
-  //     }
-  //   } catch (error) {
-  //     // Error retrieving data
-  //   }
-  // };
+// console.log('check inside')
+// console.log('check inside', user)
+  that.registerForPushNotificationAsync(user)
+})
 
+}
+  // for allow users 
+  registerForPushNotificationAsync = async(user)=>{
+console.log('user' , user.user.uid)
+
+var myUID = user.user.uid
+console.log('user' , user.uid)
+    console.log('notification')
+    const { status: existingStatus } = await Permissions.getAsync(
+      Permissions.NOTIFICATIONS
+      );
+      let finalStatus = existingStatus;
+      console.log('finalStatus', finalStatus)
+      
+      // only ask if permissions have not already been determined, because
+      // iOS won't necessarily prompt the user a second time.
+      // if (existingStatus !== 'granted') {
+        // Android remote notification permissions are granted during the app
+        // install, so this will only ask on iOS
+        // console.log('existingStatus', existingStatus)
+    //   const { status } = await Permissions.askAsync(Permissions.NOTIFICATIONS);
+    //   finalStatus = status;
+    // }
   
+    // Stop here if the user did not grant permissions
+    // if (finalStatus !== 'granted') {
+    //   console.log('finalStatus granted' ,finalStatus )
+    //   return;
+    // }
+    
+    console.log('user.uid')
+    console.log(user.uid)
+    // Get the token that uniquely identifies this device
+    let token = await Notifications.getExpoPushTokenAsync();
+    console.log('token 2', token)
+    console.log('token 2', token)
+  var updates = {}
+  updates['/expoTokens'] = token
+  firebase.database().ref('users').child(myUID).update(updates)
+    // POST the token to your backend server from where you can retrieve it to send push notifications.
+    // return fetch(PUSH_ENDPOINT, {
+    //   method: 'POST',
+    //   headers: {
+    //     Accept: 'application/json',
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     token: {
+    //       value: token,
+    //     },
+    //     user: {
+    //       username: 'Brent',
+    //     },
+    //   }),
+    // });
+  }
+
+  // }
   
   
     render() {
@@ -119,7 +171,7 @@ export default  class DashBoard extends Component {
             </CardItem>
           
           </Card>
-
+ 
     {/******************************* image 1 end ******************/}
 
 
@@ -137,7 +189,7 @@ export default  class DashBoard extends Component {
                </Button>
     </View>
 </ImageBackground>
-
+  
             </CardItem>
           
           </Card>

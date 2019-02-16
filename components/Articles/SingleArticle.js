@@ -45,34 +45,7 @@ export default  class SingleArticle extends Component {
         data : route.editorHtml
       })
 var myThis = this
-//       firebase.database().ref('/articles/'+route+'/').on('value' , function(snapshot) {
-//         console.log(snapshot.val())
-//         data  = snapshot.val()
-//         // var image = data['avatarURL']
-//         var image 
-//         var   title
-//         Object.keys(data).map((data1, index) => {
-//        var a =    data[data1]
-//           console.log(a.avatarURL)
-//           image = a.avatarURL
-//           title = a.title
-
-//         })
         
-//         // console.log('image')
-//         // console.log(data.avatarURL)
-//         // console.log(image)
-//         // console.log('title')
-//         // console.log(title)
-//       // var   content= data.editorHtml
-//       myThis.setState({
-//             title : title , 
-//             content : content , 
-//             image : image
-//          })
-  
-      
-//       })
   
     
   }
@@ -99,8 +72,6 @@ var myThis = this
         return <Expo.AppLoading />;
       }
 
-      // console.log('this.state.data')
-      // console.log(this.state.data)
       const { state, navigate } = this.props.navigation;
 
    var     data = state.params.screen
@@ -127,7 +98,6 @@ var myThis = this
 
 <Right/>
         </Header>
-          {/* <Text >ozijsoidozjsoc</Text>     */}
 
           <Card>
             <CardItem header bordered>
