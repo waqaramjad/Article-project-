@@ -12,12 +12,14 @@ import {AsyncStorage} from 'react-native';
 // import { Permissions, Notifications } from 'expo';
 import { Permissions, Notifications } from 'expo';
 var config = {
-  apiKey: "AIzaSyDcyZcVQP8nuHcMJsKd5wHxoaerUW6apZQ",
-    authDomain: "waqarchatapp.firebaseapp.com",
-    databaseURL: "https://waqarchatapp.firebaseio.com",
-    projectId: "waqarchatapp",
-    storageBucket: "waqarchatapp.appspot.com",
-    messagingSenderId: "676235345078"};
+  apiKey: "AIzaSyBvPD_nMwTS8AZ2CPC65OyKu5s1XulUW_4",
+    authDomain: "go-ministries-app.firebaseapp.com",
+    databaseURL: "https://go-ministries-app.firebaseio.com",
+    projectId: "go-ministries-app",
+    storageBucket: "go-ministries-app.appspot.com",
+    messagingSenderId: "110885403273"
+  
+  };
 firebase.initializeApp(config);
 
 

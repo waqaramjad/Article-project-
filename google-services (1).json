@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "676235345078",
-    "firebase_url": "https://waqarchatapp.firebaseio.com",
-    "project_id": "waqarchatapp",
-    "storage_bucket": "waqarchatapp.appspot.com"
+    "project_number": "110885403273",
+    "firebase_url": "https://go-ministries-app.firebaseio.com",
+    "project_id": "go-ministries-app",
+    "storage_bucket": "go-ministries-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:676235345078:android:5b9f4b1b3b870237",
+        "mobilesdk_app_id": "1:110885403273:android:9f383acc174bd458",
         "android_client_info": {
-          "package_name": "com.AwesomeProject.AwesomeProject"
+          "package_name": "com.Article.Article"
         }
       },
       "oauth_client": [
         {
-          "client_id": "676235345078-jsr5hp7rh34smh71q7mc2peah4a0d98t.apps.googleusercontent.com",
+          "client_id": "110885403273-ug7ec56p4aiq85h31ubusp11h6ajmjuq.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBMDgWqTSqmM7jpK60ndw0dV0BBuxlbyUo"
+          "current_key": "AIzaSyCt_g9gnvrlspAeOtPOtiQTyd5RaZewidM"
         }
       ],
       "services": {
