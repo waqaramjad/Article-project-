@@ -61,16 +61,16 @@ export default  class DashBoard extends Component {
 
 componentDidMount(){
 var that = this
-firebase.auth().signInAndRetrieveDataWithEmailAndPassword('waqaramjad345@gmail.com' , '000000' ).then(user=>{
+// firebase.auth().signInAndRetrieveDataWithEmailAndPassword('waqaramjad345@gmail.com' , '000000' ).then(user=>{
 
 // console.log('check inside')
 // console.log('check inside', user)
-  that.registerForPushNotificationAsync(user)
-})
+  that.registerForPushNotificationAsync()
+// })
 
 }
   // for allow users 
-  registerForPushNotificationAsync = async(user)=>{
+  registerForPushNotificationAsync = async()=>{
 console.log('user' , user.user.uid)
 
 var myUID = user.user.uid
