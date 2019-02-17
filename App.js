@@ -18,6 +18,7 @@ import {createStackNavigator ,createAppContainer } from 'react-navigation';
 import DashBoard from './components/home/DashBoard'
 import firebase from 'firebase';
 import {AsyncStorage} from 'react-native';
+import { Permissions, Notifications } from 'expo';
 
 
 

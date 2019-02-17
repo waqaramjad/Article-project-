@@ -94,7 +94,13 @@ export default  class Article extends Component {
             <Text style={{color:'white' ,fontWeight: 'bold' , marginTop : "2%" }}>{route}</Text>
           </Body>
          
-          <Right/>
+          <Right>
+            <Button  transparent >
+              <Title>Subscribe</Title>
+            </Button>
+
+
+</Right>
         </Header>
         <Content>
         
