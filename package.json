@@ -36,6 +36,7 @@
     "react-native": "~0.55.2",
     "react-native-animatable": "^1.2.4",
     "react-native-deprecated-custom-components": "^0.1.2",
+    "react-native-device-info": "^0.26.3",
     "react-native-dimension": "^1.0.6",
     "react-native-drawer": "^2.5.0",
     "react-native-easy-grid": "^0.2.0",

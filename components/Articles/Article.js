@@ -15,6 +15,7 @@ var data = "" ;
 var title = ''
 var content  = ''
 var CategoryData = undefined
+var token = ''
 
 export default  class Article extends Component { 
   static navigationOptions = {
@@ -29,7 +30,8 @@ export default  class Article extends Component {
       content : '' , 
       data : undefined , 
       image : '' , 
-      DataObject : ''
+      DataObject : '' , 
+      token : ''
 
      
       };
@@ -47,10 +49,12 @@ export default  class Article extends Component {
       AsyncStorage.getItem("token").then((value) => {
         // var cnvertTedData = JSON.parse(value)
         // CategoryData = cnvertTedData[route]
+        token = value
         console.log(value)
-        // this.setState({
-        //   data : CategoryData
-        // })
+
+        this.setState({
+          token : value
+        })
       }).done();
       console.log(route)
 
@@ -59,6 +63,20 @@ export default  class Article extends Component {
 
   
     
+  }
+
+  sunscribe(){
+// alert('done')
+var objectToken = token
+var a = ['myToken']
+var mytoken = {
+  
+    pushToken : token
+  
+}
+console.log(mytoken)
+  firebase.database().ref('users/'+route+'/').update(mytoken)
+
   }
 
   
@@ -105,7 +123,7 @@ export default  class Article extends Component {
           </Body>
          
           <Right>
-            <Button  transparent >
+            <Button onPress={()=>{this.sunscribe()} }transparent >
               <Title>Subscribe</Title>
             </Button>
 
