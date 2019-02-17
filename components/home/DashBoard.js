@@ -102,11 +102,14 @@ console.log('user' , user.uid)
     console.log(user.uid)
     // Get the token that uniquely identifies this device
     let token = await Notifications.getExpoPushTokenAsync();
+    AsyncStorage.setItem("token", token);
+
     console.log('token 2', token)
     console.log('token 2', token)
-  var updates = {}
-  updates['/expoTokens'] = token
-  firebase.database().ref('users').child(myUID).update(updates)
+  // var updates = {}
+  // updates['/expoTokens'] = token
+
+  // firebase.database().ref('users').child(myUID).update(updates)
     // POST the token to your backend server from where you can retrieve it to send push notifications.
     // return fetch(PUSH_ENDPOINT, {
     //   method: 'POST',

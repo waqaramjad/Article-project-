@@ -44,6 +44,13 @@ export default  class Article extends Component {
           data : CategoryData
         })
       }).done();
+      AsyncStorage.getItem("myVal").then((value) => {
+        var cnvertTedData = JSON.parse(value)
+        CategoryData = cnvertTedData[route]
+        this.setState({
+          data : CategoryData
+        })
+      }).done();
       console.log(route)
 
           
