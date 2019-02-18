@@ -16,6 +16,7 @@ var title = ''
 var content  = ''
 var CategoryData = undefined
 var token = ''
+var tokenText = ''
 
 export default  class Article extends Component { 
   static navigationOptions = {
@@ -31,7 +32,8 @@ export default  class Article extends Component {
       data : undefined , 
       image : '' , 
       DataObject : '' , 
-      token : ''
+      token : '' , 
+      tokenText : ''
 
      
       };
@@ -57,6 +59,17 @@ export default  class Article extends Component {
         })
       }).done();
       console.log(route)
+      AsyncStorage.getItem("tokenText").then((value) => {
+        // var cnvertTedData = JSON.parse(value)
+        // CategoryData = cnvertTedData[route]
+        tokenText = value
+        console.log(value)
+
+        this.setState({
+          tokenText : value
+        })
+      }).done();
+      console.log(route)
 
           
           
@@ -75,7 +88,7 @@ var mytoken = {
   
 }
 console.log(mytoken)
-  firebase.database().ref('users/'+route+'/').update(mytoken)
+  firebase.database().ref('users/'+route+'/'+tokenText+'/').set(mytoken)
 
   }
 

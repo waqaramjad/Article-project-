@@ -65,7 +65,7 @@ componentDidMount(){
 var that = this
 // firebase.auth().signInAndRetrieveDataWithEmailAndPassword('waqaramjad345@gmail.com' , '000000' ).then(user=>{
 
-// console.log('check inside')
+console.log('check inside')
 // console.log('check inside', user)
   that.registerForPushNotificationAsync()
 // })
@@ -73,10 +73,10 @@ var that = this
 }
   // for allow users 
   registerForPushNotificationAsync = async()=>{
-console.log('user' , user.user.uid)
+// console.log('user' , user.user.uid)
 
-var myUID = user.user.uid
-console.log('user' , user.uid)
+// var myUID = user.user.uid
+// console.log('user' , user.uid)
     console.log('notification')
     const { status: existingStatus } = await Permissions.getAsync(
       Permissions.NOTIFICATIONS
@@ -101,10 +101,21 @@ console.log('user' , user.uid)
     // }
     
     console.log('user.uid')
-    console.log(user.uid)
+    // console.log(user.uid)
     // Get the token that uniquely identifies this device
     let token = await Notifications.getExpoPushTokenAsync();
+    var shortToken = token 
+    // console.log(shortToken.replace('[',''))
+    // console.log(shortToken.replace(']',''))
+
+    var first = shortToken.replace('[','')
+    var second = first.replace(']','')
+    console.log('second' , second)
+    
+    console.log(shortToken)
+    console.log(token)
     AsyncStorage.setItem("token", token);
+    AsyncStorage.setItem("tokenText", second);
 
     console.log('token 2', token)
     console.log('token 2', token)
@@ -145,7 +156,7 @@ console.log('user' , user.uid)
 `;
 
       const { navigate  , state} = this.props.navigation; 
-      // console.log( state.params.screen)
+      console.log( 'xstate.params.screen')
       return (
         
         <Container>
