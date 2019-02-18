@@ -10,6 +10,7 @@ import gstyles from '../styling/globalStyles.js'
 import HTML from 'react-native-render-html';
 import {AsyncStorage} from 'react-native';
 // import { Permissions, Notifications } from 'expo';
+// impor  t DeviceInfo from 'react-native-device-info';
 import { Permissions, Notifications } from 'expo';
 var config = {
   apiKey: "AIzaSyBvPD_nMwTS8AZ2CPC65OyKu5s1XulUW_4",
@@ -42,7 +43,8 @@ export default  class DashBoard extends Component {
       loading: true , 
      
       };
-
+      // const uniqueId = DeviceInfo.getUniqueID();
+      // console.log(uniqueId)
      
   }
 
