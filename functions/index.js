@@ -4,14 +4,27 @@ var fetch = require('node-fetch')
 const admin = require('firebase-admin')
 admin.initializeApp(functions.config().firebase);
 
-exports.sendPushNotification = functions.database.ref('articles/Sports/').onCreate((snap, context) => {
+exports.sendPushNotification = functions.database.ref('articles/Sports/').onWrite((snap, context) => {
 
     // console.log( event.datat)
     // console.log(event)
     // const root = event.data.ref.root
 // console.log('context')
+
+// if (snap.before.exists()) {
+//     console.log('data edited ')
+//     return null;
+// }
+
+// if (!snap.after.exists()) {
+//     console.log('data deleted ')
+      
+//     return null;
+//   }
+//   const original = snap.after.val();  
+//   console.log('original', original)
 console.log( 'context', context)
-  
+
   console.log('snap.val() articles/Medical/' ,snap.val() )
   var nodeData = snap.val()
   var nodeWithTitile = nodeData.title
