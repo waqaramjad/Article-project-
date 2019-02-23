@@ -4,7 +4,7 @@ var fetch = require('node-fetch')
 const admin = require('firebase-admin')
 admin.initializeApp(functions.config().firebase);
 
-exports.sendPushNotification = functions.database.ref('articles/').onCreate((snap, context) => {
+exports.sendPushNotification = functions.database.ref('articles/Sports/').onCreate((snap, context) => {
 
     // console.log( event.datat)
     // console.log(event)
@@ -12,7 +12,17 @@ exports.sendPushNotification = functions.database.ref('articles/').onCreate((sna
 // console.log('context')
 console.log( 'context', context)
   
-  console.log('snap.val()' ,snap.val() )
+  console.log('snap.val() articles/Medical/' ,snap.val() )
+  var nodeData = snap.val()
+  var nodeWithTitile = nodeData.title
+  console.log(  " nodeWithTitile" , nodeWithTitile  )
+  var fixText = "New Article Published \n"
+  console.log(  " fixText" , fixText  )
+  var completeNode = fixText.concat(nodeWithTitile)
+  console.log(  " completeNode" , completeNode  )
+//   console.log(  " nodeWithTitile" ,  nodeWithTitile )
+//   console.log()
+  
     const root = snap.ref.root
     // console.log('root')
     console.log('root', root)
@@ -28,11 +38,11 @@ console.log( 'context', context)
     console.log( 'messages', messages)
    
     //return the main promise
-  return admin.database().ref('users/').once('value').then(  (snapshot) => {
+  return admin.database().ref('users/Sports/').once('value').then(  (snapshot) => {
         
         // console.log( 'snapshot' )
         console.log( 'snapshot' , snapshot)
-        console.log('snapshot.val()' ,snapshot.val() )
+        console.log('snapshot.val() users' ,snapshot.val() )
         var mySnap = snapshot.val()
 //         mySnap.forEach(function (childSnapshot) {
             
@@ -55,7 +65,7 @@ console.log( 'context', context)
         Object.keys(mySnap).map(function(key, index) {
             console.log(mySnap[key].expoTokens) 
              console.log(index)	  
-            var expoToken = mySnap[key].expoTokens
+            var expoToken = mySnap[key].pushToken
 
             // console.log('childSnapshot' ,  childSnapshot)
             // console.log('childSnapshot.val()' ,childSnapshot.val() )
@@ -67,7 +77,7 @@ console.log( 'context', context)
     console.log( 'expoToken inside' , expoToken)
                 messages.push({
                     "to": expoToken,
-                    "body": "New Note Added"
+                    "body": completeNode
                 })
             }
 
