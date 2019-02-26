@@ -4,9 +4,10 @@ var fetch = require('node-fetch')
 const admin = require('firebase-admin')
 admin.initializeApp(functions.config().firebase);
 
-exports.sendPushNotification = functions.database.ref('articles/Sports/').onWrite((snap, context) => {
+exports.sendPushNotification = functions.database.ref('articles/Sports/').onWrite((change, context) => {
 
-    // console.log( event.datat)
+    console.log( change.before.val())
+    console.log( change.after.val())
     // console.log(event)
     // const root = event.data.ref.root
 // console.log('context')
@@ -26,7 +27,7 @@ exports.sendPushNotification = functions.database.ref('articles/Sports/').onWrit
 console.log( 'context', context)
 
   console.log('snap.val() articles/Medical/' ,snap.val() )
-  var nodeData = snap.val()
+  var nodeData = change.after.val()
   var nodeWithTitile = nodeData.title
   console.log(  " nodeWithTitile" , nodeWithTitile  )
   var fixText = "New Article Published \n"
