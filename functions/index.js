@@ -4,46 +4,41 @@ var fetch = require('node-fetch')
 const admin = require('firebase-admin')
 admin.initializeApp(functions.config().firebase);
 
-exports.sendPushNotification = functions.database.ref('articles/Sports/').onWrite((change, context) => {
-
+exports.sendPushNotification = functions.database.ref('articles/Sports/{id}').onWrite((change, context) => {
+var titleValue = ""
     console.log( change.before.val())
     console.log( change.after.val())
-    // console.log(event)
-    // const root = event.data.ref.root
-// console.log('context')
-
-// if (snap.before.exists()) {
-//     console.log('data edited ')
-//     return null;
-// }
-
-// if (!snap.after.exists()) {
-//     console.log('data deleted ')
-      
-//     return null;
-//   }
-//   const original = snap.after.val();  
-//   console.log('original', original)
 console.log( 'context', context)
+var counter = 0
+if (change.before.exists()) {
+    console.log('updtae')
+    titleValue = "Previous Article Updated  \n"
+    counter++
+    
+  }
 
-  console.log('snap.val() articles/Medical/' ,snap.val() )
+
+  if (!change.after.exists()) {
+    console.log('updtae')
+    titleValue = " Previous Article Deleted \n"
+    counter++
+
+  }
+  if(counter==0)
+  titleValue = "New Article Published  \n"
+
+  console.log('snap.val() articles/Medical/' )
   var nodeData = change.after.val()
   var nodeWithTitile = nodeData.title
   console.log(  " nodeWithTitile" , nodeWithTitile  )
   var fixText = "New Article Published \n"
   console.log(  " fixText" , fixText  )
-  var completeNode = fixText.concat(nodeWithTitile)
+  var completeNode = titleValue.concat(nodeWithTitile)
   console.log(  " completeNode" , completeNode  )
 //   console.log(  " nodeWithTitile" ,  nodeWithTitile )
 //   console.log()
   
-    const root = snap.ref.root
-    // console.log('root')
-    console.log('root', root)
-    // console.log('snap')
-    console.log('snap' ,snap)
-    // console.log('snap.ref')
-    console.log('snap.ref' , snap.ref)
+  
     var messages = []
     // admin.database().ref('/').once('value').then((data)=>{
     // console.log('data.val()',data.val() )
@@ -116,3 +111,5 @@ console.log('messages inside .then')
     })
 
 })
+
+
