@@ -163,8 +163,12 @@ console.log('check inside')
            <StatusBar hidden={true} />
          <Header style = {gstyles.mainNav}>
           
-          <Body/>
-          <Right/>
+         <Body>
+
+<Text style={{color:'white' ,fontWeight: 'bold' , marginTop : '2%' , marginLeft: '2%' , fontSize:23 }}>Welcome To Go Ministries</Text>
+</Body>
+
+          {/* <Right/> */}
         </Header>
         <Content>
         <Grid>
@@ -259,7 +263,7 @@ console.log('check inside')
           <Card style={styles.colTwo} transparent>
             
             <CardItem cardBody>
-              <ImageBackground source={require('../../assets/home/CommunityDevelopment.png')} style=
+              <ImageBackground source={require('../../assets/mainScreen/CommunityDevelopment.jpg')} style=
               {styles.imageUIOfCard}>
     <View style={styles.ButtonandBackgroundView}>
         <Button transparent full  onPress={()=>{navigate("Article", {screen: "CommunityDevelopment"})}} style={styles.routeButton} >
@@ -284,7 +288,7 @@ console.log('check inside')
     <View style={styles.ButtonandBackgroundView}>
         <Button transparent full  onPress={()=>{navigate("Article", {screen: "KingdomBusiness"})}} style={styles.routeButton} >
                  
-                 <Text style= {styles.buttonTextUI}>Kingdom business </Text>
+                 <Text style= {styles.buttonTextUI}>Kingdom Business </Text>
 
                </Button>
     </View>
@@ -316,7 +320,7 @@ console.log('check inside')
 
     imageUIOfCard : {
 
-height:200,
+height:203,
 width:null ,
 flex: 1
     } , 
