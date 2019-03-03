@@ -173,7 +173,7 @@ console.log('check inside')
 
 
     {/******************************* image 1 start ******************/}
-<Card>
+<Card style={styles.colOne} transparent>
             
             <CardItem cardBody>
               <ImageBackground source={require('../../assets/mainScreen/GOSeminary.jpeg')} style=
@@ -194,7 +194,7 @@ console.log('check inside')
 
 
                 {/******************************* image 2 start ******************/}
-<Card>
+<Card style={styles.colOne} transparent>
             
             <CardItem cardBody>
               <ImageBackground source={require('../../assets/mainScreen/GOMedical.jpeg')} style=
@@ -213,7 +213,7 @@ console.log('check inside')
           </Card>
     {/******************************* image 2 end ******************/}
     {/******************************* image 3  start ******************/}
-    <Card>
+    <Card style={styles.colOne} transparent>
             
             <CardItem cardBody>
               <ImageBackground source={require('../../assets/mainScreen/GOSports.jpeg')} style=
@@ -237,7 +237,7 @@ console.log('check inside')
     <Col>
    
           
-          <Card>
+          <Card style={styles.colTwo} transparent>
             
             <CardItem cardBody>
               <ImageBackground source={require('../../assets/mainScreen/ChurchPlanting.jpeg')} style=
@@ -256,7 +256,7 @@ console.log('check inside')
 
 
 
-          <Card>
+          <Card style={styles.colTwo} transparent>
             
             <CardItem cardBody>
               <ImageBackground source={require('../../assets/home/CommunityDevelopment.png')} style=
@@ -276,7 +276,7 @@ console.log('check inside')
 
           
 
-          <Card>
+          <Card style={styles.colTwo} transparent>
             
             <CardItem cardBody>
               <ImageBackground source={require('../../assets/mainScreen/KingdomBusiness.jpeg')} style=
@@ -346,6 +346,13 @@ ButtonandBackgroundView : {
                 width:null ,
                   flex: 1
 
+
+} , 
+colOne : {
+marginBottom : -2
+} , 
+colTwo :{
+  marginBottom : -1
 
 }
   
