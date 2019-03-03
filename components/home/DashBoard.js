@@ -176,12 +176,12 @@ console.log('check inside')
 <Card>
             
             <CardItem cardBody>
-              <ImageBackground source={require('../../assets/home/seminary.jpg')} style=
+              <ImageBackground source={require('../../assets/mainScreen/GOSeminary.jpeg')} style=
               {styles.imageUIOfCard}>
     <View style={styles.ButtonandBackgroundView}>
         <Button transparent full  onPress={()=>{navigate("Article", {screen: "Seminary"})}} style={styles.routeButton} >
                  
-                 <Text style= {styles.buttonTextUI}> Seminary </Text>
+                 <Text style= {styles.buttonTextUI}>Go Seminary </Text>
 
                </Button>
     </View>
@@ -197,12 +197,12 @@ console.log('check inside')
 <Card>
             
             <CardItem cardBody>
-              <ImageBackground source={require('../../assets/home/Medical.jpg')} style=
+              <ImageBackground source={require('../../assets/mainScreen/GOMedical.jpeg')} style=
               {styles.imageUIOfCard}>
     <View style={styles.ButtonandBackgroundView}>
         <Button transparent full  onPress={()=>{navigate("Article", {screen: "Medical"})}} style={styles.routeButton} >
                  
-                 <Text style= {styles.buttonTextUI}> Medical </Text>
+                 <Text style= {styles.buttonTextUI}>Go Medical </Text>
 
                </Button>
     </View>
@@ -216,12 +216,12 @@ console.log('check inside')
     <Card>
             
             <CardItem cardBody>
-              <ImageBackground source={require('../../assets/home/sports.jpg')} style=
+              <ImageBackground source={require('../../assets/mainScreen/GOSports.jpeg')} style=
               {styles.imageUIOfCard}>
     <View style={styles.ButtonandBackgroundView}>
         <Button transparent full  onPress={()=>{navigate("Article", {screen: "Sports"})}} style={styles.routeButton} >
                  
-                 <Text style= {styles.buttonTextUI}> Sports </Text>
+                 <Text style= {styles.buttonTextUI}>Go Sports </Text>
 
                </Button>
     </View>
@@ -240,7 +240,7 @@ console.log('check inside')
           <Card>
             
             <CardItem cardBody>
-              <ImageBackground source={require('../../assets/home/ChurchPlanting.jpg')} style=
+              <ImageBackground source={require('../../assets/mainScreen/ChurchPlanting.jpeg')} style=
               {styles.imageUIOfCard}>
     <View style={styles.ButtonandBackgroundView}>
         <Button transparent full  onPress={()=>{navigate("Article", {screen: "ChurchPlanning"})}} style={styles.routeButton} >
@@ -279,7 +279,7 @@ console.log('check inside')
           <Card>
             
             <CardItem cardBody>
-              <ImageBackground source={require('../../assets/home/Kingdombusiness.jpg')} style=
+              <ImageBackground source={require('../../assets/mainScreen/KingdomBusiness.jpeg')} style=
               {styles.imageUIOfCard}>
     <View style={styles.ButtonandBackgroundView}>
         <Button transparent full  onPress={()=>{navigate("Article", {screen: "KingdomBusiness"})}} style={styles.routeButton} >
