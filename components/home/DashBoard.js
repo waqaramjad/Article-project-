@@ -119,29 +119,8 @@ console.log('check inside')
 
     console.log('token 2', token)
     console.log('token 2', token)
-  // var updates = {}
-  // updates['/expoTokens'] = token
-
-  // firebase.database().ref('users').child(myUID).update(updates)
-    // POST the token to your backend server from where you can retrieve it to send push notifications.
-    // return fetch(PUSH_ENDPOINT, {
-    //   method: 'POST',
-    //   headers: {
-    //     Accept: 'application/json',
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     token: {
-    //       value: token,
-    //     },
-    //     user: {
-    //       username: 'Brent',
-    //     },
-    //   }),
-    // });
   }
 
-  // }
   
   
     render() {

@@ -2,19 +2,25 @@
   "expo": {
     "sdkVersion": "27.0.0",
     "description": "It's article app in which there are 6 catergories sports , medical etc , you can read different Article from that ",
+    "icon" : "./assets/appIconIOS.png" ,
+    "version" : "1.0.0" ,
+
     "packagerOpts": {
       "sourceExts": ["js", "jsx", "scss", "sass"],
       "transformer": "node_modules/react-native-sass-transformer/index.js" 
        } ,
   
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true , 
+      "buildNumber" : "1" , 
+      "bundleIdentifier" : "com.Article.Article"
     },
 
     "android": {
       "package": "com.Article.Article" , 
       "versionCode" : 1, 
       "permissions" : [] , 
+      
       "icon" : "./assets/appIcon.png" 
 
     }
